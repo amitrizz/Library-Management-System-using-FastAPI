@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  server_app:
+    build: .
+    volumes:
+      - .:/server
+
+    ports:
+      - "8000:8000"
+    image: app:flight_booking_server
+    container_name: flight_booking_server
+    command: gunicorn main:app --host 0.0.0.0 --port 8000
+  
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - server_app
+    image: app:flight_booking_nginx
+    container_name: flight_booking_nginx
+  
