@@ -12,7 +12,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",  # Assuming React is running on this port
-    # Add other origins as needed
+    "https://cosmo-cloud-tawny.vercel.app",
 ]
 
 app.add_middleware(
