@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /server
 COPY . /server
 
-RUN pip install --upgrade pip && pip install -r requirements.txt gunicorn
+RUN pip install --upgrade pip && pip install -r requirements.txt uvicorn
 
 
-CMD ["gunicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

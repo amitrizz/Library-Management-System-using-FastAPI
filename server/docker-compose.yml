@@ -7,7 +7,7 @@ services:
       - "8000:8000"
     image: app:server
     container_name: server
-    command: gunicorn main:app --host 0.0.0.0 --port 8000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
   
   nginx:
     build: ./nginx
