@@ -14,7 +14,6 @@ origins = [
     "http://localhost:3000",  # Assuming React is running on this port
     "https://cosmo-cloud-tawny.vercel.app",
 ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
