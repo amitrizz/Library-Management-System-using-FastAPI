@@ -10,7 +10,4 @@ COPY . /server
 RUN pip install --upgrade pip && pip install -r requirements.txt gunicorn
 
 
-COPY ./scripts /scripts
-RUN chmod +x /scripts/*
-
 CMD ["/scripts/entrypoint.sh", "gunicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
