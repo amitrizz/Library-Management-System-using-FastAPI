@@ -8,8 +8,8 @@ services:
 
     ports:
       - "8000:8000"
-    image: app:flight_booking_server
-    container_name: flight_booking_server
+    image: app:server
+    container_name: server
     command: gunicorn main:app --host 0.0.0.0 --port 8000
   
   nginx:
@@ -18,6 +18,6 @@ services:
       - "80:80"
     depends_on:
       - server_app
-    image: app:flight_booking_nginx
-    container_name: flight_booking_nginx
+    image: app:nginx
+    container_name: nginx
   
